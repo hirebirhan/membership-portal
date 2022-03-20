@@ -1,0 +1,153 @@
+  <div
+    fxLayout="row"
+    fxLayout.xs="column"
+    fxFlexFill
+  >
+
+    <div fxFlex>
+      <mat-card  class="mat-elevation-z6">
+        <mat-card-title-group>
+          <mat-card-title> Wollo media group </mat-card-title>
+          <mat-card-subtitle>membership form</mat-card-subtitle>
+
+        </mat-card-title-group>
+
+        <mat-card-content>
+
+        <form [formGroup]="membershipForm" (ngSubmit)="SaveMemberInformation()">
+          <div
+            fxLayout="row"
+            fxLayoutGap="12px"
+            fxLayout.xs="column"
+            fxFlexFill
+          >
+            <mat-form-field fxFlex appearance="outline">
+              <mat-label>First name</mat-label>
+              <input
+                matInput
+                formControlName="FirstName"
+                placeholder="Placeholder"
+              />
+              <mat-error *ngIf="FirstName?.hasError('minlength')"
+                >First name should be at least 3 characters long</mat-error
+              >
+
+              <mat-error *ngIf="FirstName?.hasError('required')"
+                >First name cannot be empty</mat-error
+              >
+            </mat-form-field>
+
+            <mat-form-field fxFlex appearance="outline">
+              <mat-label>middle name</mat-label>
+              <input
+                matInput
+                formControlName="MiddleName"
+                placeholder="Placeholder"
+              />
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" fxLayoutGap="5px" fxLayout.xs="column" fxFlexFill>
+            <mat-form-field fxFlex appearance="outline">
+              <mat-label>Last name</mat-label>
+              <input
+                matInput
+                formControlName="LastName"
+                placeholder="Placeholder"
+              />
+            </mat-form-field>
+
+            <mat-form-field fxFlex appearance="outline">
+              <mat-label>Gender</mat-label>
+              <input
+                matInput
+                formControlName="Gender"
+                placeholder="Placeholder"
+              />
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="5px" fxLayout.xs="column" fxFlexFill>
+            <mat-form-field fxFlex appearance="outline">
+              <mat-label>Country</mat-label>
+              <input
+                matInput
+                formControlName="Country"
+                placeholder="Placeholder"
+              />
+            </mat-form-field>
+            <mat-form-field fxFlex appearance="outline">
+              <mat-label>City</mat-label>
+              <input
+                matInput
+                formControlName="City"
+                placeholder="Placeholder"
+              />
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" fxLayoutGap="5px" fxLayout.xs="column" fxFlexFill>
+            <mat-form-field fxFlex appearance="outline">
+              <mat-label>Phone number</mat-label>
+              <input
+                matInput
+                formControlName="PhoneNumber"
+                placeholder="Placeholder"
+              />
+            </mat-form-field>
+
+            <mat-form-field fxFlex appearance="outline">
+              <mat-label>Email</mat-label>
+              <input
+                matInput
+                formControlName="Email"
+                placeholder="Placeholder"
+              />
+            </mat-form-field>
+          </div>
+
+          <div fxLayout="row" fxLayoutGap="10px" fxLayout.xs="column" fxFlexFill>
+            <mat-form-field fxFlex appearance="outline">
+              <mat-label>Educational Status</mat-label>
+              <input
+                matInput
+                formControlName="EducationalStatus"
+                placeholder="Placeholder"
+              />
+            </mat-form-field>
+
+            <mat-form-field fxFlex appearance="outline">
+              <mat-label>Field of Study</mat-label>
+              <input
+                matInput
+                formControlName="FieldOfStudy"
+                placeholder="Placeholder"
+              />
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" fxLayoutGap="10px">
+            <mat-form-field fxFlex appearance="outline">
+              <mat-label>Interested in </mat-label>
+              <input
+                matInput
+                formControlName="SupportType"
+                placeholder="Placeholder"
+              />
+            </mat-form-field>
+          </div>
+          <div fxLayout="row" fxLayoutGap="15px" fxLayoutAlign="end end">
+            <button
+              type="button"
+              (click)="resetForm()"
+              mat-raised-button
+              color="warn"
+            >
+              Reset
+            </button>
+            <button type="submit" mat-raised-button color="primary">
+              Apply
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+      </mat-card>
+    </div>
+  </div>

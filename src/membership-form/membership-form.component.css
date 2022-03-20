@@ -1,0 +1,9 @@
+.content {
+  margin: 30px 60px;
+}
+.mat-form-field label {
+  font-size: 20px;
+}
+.mat-form-field.mat-form-field-should-float label {
+  font-size: 13px;
+}
